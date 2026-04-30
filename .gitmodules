@@ -1,0 +1,12 @@
+[submodule "lib/pybind11"]
+	path = lib/pybind11
+	url = https://github.com/pybind/pybind11.git
+	branch = v2.12
+[submodule "lib/cpython"]
+	path = lib/cpython
+	url = https://github.com/python/cpython.git
+	branch = 3.12
+[submodule "lib/xla"]
+	path = lib/xla
+	url = https://github.com/openxla/xla.git
+	branch = main
