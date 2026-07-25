@@ -23,27 +23,19 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install build tools
+      - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install build auditwheel
+          python -m pip install build
 
-      - name: Build wheel
-        run: |
-          python -m build --wheel
+      - name: Build package
+        run: python -m build
 
-      - name: Repair Linux wheel
-        run: |
-          mkdir -p dist/repaired
-          MATLAB_ROOT=$(dirname $(dirname $(which matlab)))
-          export LD_LIBRARY_PATH=$MATLAB_ROOT/bin/glnxa64:$MATLAB_ROOT/extern/bin/glnxa64:$LD_LIBRARY_PATH
-          auditwheel repair dist/*.whl -w dist/repaired/
-
-      - name: Upload built wheels
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cloud-wheels
-          path: dist/repaired/*.whl
+          name: pypi-artifacts
+          path: dist/*
 
   publish-to-pypi:
     name: Upload to PyPI
@@ -56,10 +48,10 @@ jobs:
       id-token: write
 
     steps:
-      - name: Download built wheels
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: cloud-wheels
+          name: pypi-artifacts
           path: dist
 
       - name: Publish package to PyPI

@@ -3,7 +3,7 @@ project(matlab4jax_cpp LANGUAGES CXX)
 
 find_package(Python REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(nanobind CONFIG REQUIRED)
-find_package(Matlab REQUIRED COMPONENTS ENGINE_LIBRARY)
+find_package(Matlab REQUIRED)
 
 execute_process(
     COMMAND "${Python_EXECUTABLE}" "-c" "import jax; print(jax.ffi.include_dir())"
@@ -19,8 +19,8 @@ target_include_directories(matlab4jax_cpp PRIVATE
 )
 
 target_link_libraries(matlab4jax_cpp PRIVATE
-    ${Matlab_ENGINE_LIBRARY}
-    ${Matlab_DATAARRAY_LIBRARY}
+    Matlab::MatlabEngine
+    Matlab::MatlabDataArray
 )
 
 install(TARGETS matlab4jax_cpp LIBRARY DESTINATION .)
