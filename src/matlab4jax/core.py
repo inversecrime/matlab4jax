@@ -103,6 +103,7 @@ def run_matlab_pp_rule(eqn: jax._src.core.JaxprEqn, context: jax._src.core.Jaxpr
 
 
 def run_matlab(
+    *,
     inputs: Sequence[Array],
     input_names: Sequence[str],
     command: str,
@@ -121,6 +122,7 @@ def run_matlab(
 
 
 def run_and_time_matlab(
+    *,
     inputs: Sequence[Array],
     input_names: Sequence[str],
     command: str,
