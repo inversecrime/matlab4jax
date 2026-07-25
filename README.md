@@ -1,5 +1,5 @@
 # matlab4jax
-Run MATLAB code from JAX with `jax.jit` support.
+Run MATLAB code from JAX with `jax.jit` support. Install with `pip install matlab4jax`.
 
 ## Example
 ```python
@@ -27,14 +27,6 @@ Output:
 [[-2.0000002   1.0000001 ]
  [ 1.5000001  -0.50000006]]
 ```
-
-## Installation
-Requires:
-- JAX
-- MATLAB with the MATLAB Engine API
-- C++ compiler and CMake
-
-Use `pip install .` to install `matlab4jax`.
 
 ## License
 Licensed under the [MIT License](LICENSE.md).
