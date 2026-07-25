@@ -4,8 +4,8 @@ from jax import ShapeDtypeStruct
 
 import matlab4jax
 
-x = jnp.array([[1., 2.],
-               [3., 4.]])
+x = jnp.array([[1.0, 2.0],
+               [3.0, 4.0]])
 
 [y] = jax.jit(lambda x: matlab4jax.run_matlab(
     inputs=[x],

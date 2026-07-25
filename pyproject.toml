@@ -7,7 +7,7 @@ name = "matlab4jax"
 version = "0.1.0"
 description = "Call MATLAB functions from JAX."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 dependencies = ["jax", "numpy"]
 
 [tool.scikit-build]
