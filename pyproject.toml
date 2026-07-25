@@ -1,0 +1,14 @@
+[build-system]
+requires = ["scikit-build-core>=0.8", "nanobind>=1.8.0", "jax>=0.4.29"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "matlab4jax"
+version = "0.1.0"
+description = "Call Matlab functions from Jax."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[tool.scikit-build]
+cmake.build-type = "Release"
