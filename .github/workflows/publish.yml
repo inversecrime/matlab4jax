@@ -42,11 +42,6 @@ jobs:
           auditwheel repair dist/*.whl \
             --exclude libMatlabEngine.so \
             --exclude libMatlabDataArray.so \
-            --exclude libmwengine_api.so \
-            --exclude libeng.so \
-            --exclude libmx.so \
-            --exclude libmex.so \
-            --exclude libmat.so \
             -w dist/repaired/
           rm -f dist/*.whl
           mv dist/repaired/*.whl dist/

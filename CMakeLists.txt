@@ -18,9 +18,14 @@ target_include_directories(matlab4jax_cpp PRIVATE
     ${Matlab_INCLUDE_DIRS}
 )
 
+target_link_directories(matlab4jax_cpp PRIVATE
+    ${Matlab_ROOT_DIR}/extern/bin/glnxa64
+    ${Matlab_ROOT_DIR}/bin/glnxa64
+)
+
 target_link_libraries(matlab4jax_cpp PRIVATE
-    Matlab::MatlabEngine
-    Matlab::MatlabDataArray
+    MatlabEngine
+    MatlabDataArray
 )
 
 install(TARGETS matlab4jax_cpp LIBRARY DESTINATION .)
