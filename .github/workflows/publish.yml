@@ -35,6 +35,7 @@ jobs:
       - name: Repair Linux wheel
         run: |
           mkdir -p dist/repaired
+          export LD_LIBRARY_PATH=$MATLAB_ROOT/bin/glnxa64:$MATLAB_ROOT/extern/bin/glnxa64:$LD_LIBRARY_PATH
           auditwheel repair dist/*.whl -w dist/repaired/
 
       - name: Upload built wheels
