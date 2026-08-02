@@ -1,5 +1,17 @@
 # matlab4jax
-Run MATLAB code from JAX with `jax.jit` support. Install with `pip install matlab4jax`.
+Run MATLAB code from JAX with `jax.jit` support.
+
+# Installation
+Pre-compiled wheels are available for MATLAB R2026a with Python 3.12 and Python 3.13.
+
+If you are using a supported configuration, install with:
+```bash
+pip install matlab4jax
+```
+Otherwise, install from source:
+```bash
+pip install --no-binary matlab4jax matlab4jax
+```
 
 ## Example
 ```python

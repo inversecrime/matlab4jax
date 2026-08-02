@@ -6,12 +6,15 @@ import jax._src.core
 import jax._src.pretty_printer
 import jax.interpreters.mlir
 import jax.numpy as jnp
-import matlab4jax.matlab4jax_cpp
 import numpy as np
 from jax import Array, ShapeDtypeStruct
 from jax.core import ShapedArray
 from jax.extend.core import Primitive
 from jax.typing import ArrayLike
+
+import matlab4jax.matlab4jax_cpp
+
+jax.default_device = jax.devices("cpu")[0]
 
 
 def eval_command(command: str, /) ->None:

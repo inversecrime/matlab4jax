@@ -1,1 +1,2 @@
-from .core import (eval_command, set_variable, get_variable, eval_function, run_matlab, run_and_time_matlab)
+from .core import (eval_command, eval_function, get_variable,
+                   run_and_time_matlab, run_matlab, set_variable)
