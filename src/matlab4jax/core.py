@@ -6,7 +6,7 @@ import jax._src.core
 import jax._src.pretty_printer
 import jax.interpreters.mlir
 import jax.numpy as jnp
-import matlab4jax_cpp
+import matlab4jax.matlab4jax_cpp
 import numpy as np
 from jax import Array, ShapeDtypeStruct
 from jax.core import ShapedArray
@@ -15,15 +15,15 @@ from jax.typing import ArrayLike
 
 
 def eval_command(command: str, /) ->None:
-    matlab4jax_cpp.eval_command(command)
+    matlab4jax.matlab4jax_cpp.eval_command(command)
 
 
 def set_variable(name: str, value: ArrayLike, /) ->None:
-    matlab4jax_cpp.set_variable(name, jnp.asarray(value))
+    matlab4jax.matlab4jax_cpp.set_variable(name, jnp.asarray(value))
 
 
 def get_variable(name: str, /) ->Array:
-    return matlab4jax_cpp.get_variable(name)
+    return matlab4jax.matlab4jax_cpp.get_variable(name)
 
 
 def eval_function(name_or_path: str | Path, inputs: Sequence[ArrayLike], /, *, n_outputs: int | None = None) -> list[Array]:
@@ -48,7 +48,7 @@ def eval_function(name_or_path: str | Path, inputs: Sequence[ArrayLike], /, *, n
     return outputs
 
 
-jax.ffi.register_ffi_target("run_matlab", matlab4jax_cpp.run_matlab(), platform="cpu")
+jax.ffi.register_ffi_target("run_matlab", matlab4jax.matlab4jax_cpp.run_matlab(), platform="cpu")
 
 
 def encode_string(string: str) -> np.ndarray:

@@ -28,4 +28,4 @@ target_link_libraries(matlab4jax_cpp PRIVATE
     MatlabDataArray
 )
 
-install(TARGETS matlab4jax_cpp LIBRARY DESTINATION .)
+install(TARGETS matlab4jax_cpp LIBRARY DESTINATION matlab4jax)
