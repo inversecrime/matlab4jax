@@ -14,7 +14,7 @@ from jax.typing import ArrayLike
 
 import matlab4jax.matlab4jax_cpp
 
-jax.default_device = jax.devices("cpu")[0]
+jax.config.update("jax_default_device", "cpu")
 
 
 def eval_command(command: str, /) ->None:
