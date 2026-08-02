@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "matlab4jax"
-version = "0.1.4"
+version = "0.1.5"
 description = "Call MATLAB functions from JAX."
 readme = "README.md"
 requires-python = ">=3.12"
