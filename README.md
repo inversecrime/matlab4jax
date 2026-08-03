@@ -42,11 +42,11 @@ pip install --no-binary matlab4jax matlab4jax
 
 ## Shape convention
 MATLAB and JAX use different conventions for array shapes. While JAX supports 0-dimensional and 1-dimensional arrays, in MATLAB every array has at least two dimensions. Additionally, MATLAB hides trailing singleton dimensions. The following conversions will be applied:
-| JAX shape | MATLAB shape |
-| --------- | ------------ |
-| ()        | (1, 1)       |
-| (n,)      | (1, n)       |
-| (..., 1)  | (...)        |
+| JAX shape  | MATLAB shape |
+| ---------- | ------------ |
+| `()`       | `(1, 1)`     |
+| `(n,)`     | `(1, n)`     |
+| `(..., 1)` | `(...)`      |
 
 ## License
 Licensed under the [MIT License](LICENSE.md).
