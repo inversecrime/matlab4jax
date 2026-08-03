@@ -163,6 +163,7 @@ template <xla::ffi::DataType T>
 void matlab_to_xla(const matlab::data::TypedArray<xla::ffi::NativeType<T>> &matlab_array, xla::ffi::Result<xla::ffi::Buffer<T>> &xla_array) {
     std::vector<size_t> matlab_shape = matlab_array.getDimensions();
     std::vector<size_t> xla_shape = get_shape(*xla_array);
+    xla_shape.resize(matlab_shape.size(), 1);
     if (matlab_shape != xla_shape) {
         std::ostringstream error_message;
         error_message << "dimension error: matlab shape " << matlab_shape << " does not match xla shape " << xla_shape;
